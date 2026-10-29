@@ -60,9 +60,19 @@ public class Exercises {
      * @param toAdd the value to append in a new node
      */
     public static void addToEnd(ListNode head, int toAdd) {
-
+        if (head == null) {
+            return;
+        }
+        ListNode newNode = new ListNode(toAdd);
+        ListNode current = head;
+        while (current != null) {
+            if (current.next == null) {
+                current.next = newNode;
+                break;
+            }
+            current = current.next;
+        }
     }
-
     /**
      * Modifies the list to make all negative values positive.
      * 
